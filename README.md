@@ -100,7 +100,7 @@ Your Docker data (containers, images, volumes, etc.) should not be affected, but
 
 Then, to get started:
 
-1. Run `docker version` and `docker compose version` to see if you have Docker and Docker Compose properly installed. You should be able to see their versions in the output.
+1. Run `docker version` and `docker-compose version` to see if you have Docker and Docker Compose properly installed. You should be able to see their versions in the output.
 
     For example:
 
@@ -117,7 +117,7 @@ Then, to get started:
       Version:          23.0.5
       [...]
 
-    >>> docker compose version
+    >>> docker-compose version
     Docker Compose version v2.17.3
     ```
 
@@ -125,7 +125,7 @@ Then, to get started:
 
 2. Clone or download this repository and extract (see [Download](#download)).
 3. Open a terminal of your choice and change its working directory into this folder (`DVWA`).
-4. Run `docker compose up -d`.
+4. Run `docker-compose up -d`.
 
 DVWA is now available at `http://localhost:4280`.
 
@@ -136,7 +136,7 @@ For more information on this decision, see [I want to run DVWA on a different po
 
 If you made local changes and want to build the project from local, go to `compose.yml` and change `pull_policy: always` to `pull_policy: build`.
 
-Running `docker compose up -d` should trigger Docker to build an image from local regardless of what is available in the registry.
+Running `docker-compose up -d` should trigger Docker to build an image from local regardless of what is available in the registry.
 
 See also: [`pull_policy`](https://github.com/compose-spec/compose-spec/blob/master/05-services.md#pull_policy
 ).
@@ -284,13 +284,13 @@ Logs can also be accessed from the terminal.
 2. Show the merged logs
 
     ```shell
-    docker compose logs
+    docker-compose logs
     ```
 
    In case you want to export the logs to a file, e.g. `dvwa.log`
 
    ```shell
-   docker compose logs >dvwa.log
+   docker-compose logs >dvwa.log
    ```
 
 #### I want to run DVWA on a different port
@@ -323,8 +323,8 @@ The included [`compose.yml`](./compose.yml) file automatically runs DVWA and its
 
 To disable this, you can delete or comment out the `restart: unless-stopped` lines in the [`compose.yml`](./compose.yml) file.
 
-If you want to disable this behavior temporarily, you can run `docker compose stop`, or use Docker Desktop, find `dvwa` and click Stop.
-Additionally, you can delete the containers, or run `docker compose down`.
+If you want to disable this behavior temporarily, you can run `docker-compose stop`, or use Docker Desktop, find `dvwa` and click Stop.
+Additionally, you can delete the containers, or run `docker-compose down`.
 
 ### Log files
 
